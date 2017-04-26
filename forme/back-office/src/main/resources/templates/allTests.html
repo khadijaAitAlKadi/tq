@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    <meta charset="utf-8"/>
+        <title>managing subjects</title>
+    </head>
+    <body>
+        <h1>Welcome! here u can manage tests</h1>
+
+         <h1 th:inline="text" style="align:center">[[${#httpServletRequest.remoteUser}]] </h1>
+         <table>
+         <thead>
+         <tr>
+         <th>id test</th><th>niveau test</th><th>sujet test</th>
+         </tr>
+         </thead>   
+         <tbody>
+         <tr th:each="t:${tests}">
+         <td th:text="${t.idTest}"></td>
+         <td th:text="${t.niveauTest}"></td>
+         <td th:text="${t.sujet.nomSujet}"></td>
+         
+         </tr>
+         </tbody> 
+         </table>
+         
+          <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

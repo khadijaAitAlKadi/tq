@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    <meta charset="utf-8"/>
+        <title>managing subjects</title>
+    </head>
+    <body>
+        <h1>Welcome! here u can manage subjects</h1>
+
+         <h1 th:inline="text">sorry [[${#httpServletRequest.remoteUser}]]!  this page is in construction</h1>
+          <p>Click <a th:href="@{/sujet/new}">here</a> to add a subject.</p>
+          <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>
